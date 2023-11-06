@@ -7,18 +7,16 @@ result.textContent = "";
 
 if (dateOfBirthday == "") {
 	result.textContent += "Пожалуйста, введите дату рождения.";
-} else {
+} else {	
 	const resultDays = Math.floor((Date.parse(dateOfBirthday) - (Date.parse(new Date()))) / 1000 / 60 / 60 / 24);
 	result.textContent += (`До вашего дня рождения ${resultDays} `);
-}
-		(function () {
-			const resultDays = Math.floor((Date.parse(dateOfBirthday) - (Date.parse(new Date()))) / 1000 / 60 / 60 / 24);
-			
-			if (resultDays === 1) {
-				result.textContent += "день";
-			} else if (resultDays === 2 || resultDays === 3 || resultDays === 4) {
-				result.textContent += "дня";
-			} else {
-				result.textContent += "дней";
-			}}());
+
+	if (resultDays === 1) {
+		result.textContent += "день";
+	} else if (resultDays === 2 || resultDays === 3 || resultDays === 4) {
+		result.textContent += "дня";
+	} else {
+		result.textContent += "дней";
+	};
+};
 }
